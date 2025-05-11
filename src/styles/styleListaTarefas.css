@@ -1,0 +1,236 @@
+#barraBotoes {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.nome:hover {
+    background-color: rgb(200, 200, 200);
+    border-radius: 30px;
+    cursor: pointer;
+}
+
+.check {
+    width: 28px;
+    height: 28px;
+    border: 2px solid #227852;
+    border-radius: 100%;
+    appearance: none;
+    -webkit-appearance: none;
+    transition: 0.1s;
+}
+
+.check:hover {
+    cursor: pointer;
+}
+
+.check:checked {
+    background-color: #227852;
+    border-color: #227852;
+}
+
+#btnAdd {
+    margin-right: 5%;
+}
+
+#btnFiltros {
+    margin-right: 5%;
+}
+
+#cabecalhoTarefas {
+    display: flex;
+    margin: 30px 0px 30px 3%;
+    width: 96%;
+}
+
+.tarefa {
+    background-color: #D9D9D9;
+    padding: 20px;
+    border-radius: 20px;
+    display: flex;
+    margin: 8px 0px 0px 0px;
+    user-select: none;
+}
+
+.btnEscolherFiltro {
+    background-color: white;
+    color: black;
+    border: 1px solid black;
+    margin: 5px;
+}
+
+#btnSelected {
+    background-color: #227852;
+    color: white;
+    margin: 5px;
+    border: none;
+}
+
+.textoTarefa {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+}
+
+.nodoTexto {
+    width: 20%;
+    margin-left: 5%;
+    text-align: center;
+}
+
+.modalCriacao,
+.modalFiltros {
+    background-color: #0000007a;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    z-index: 10;
+}
+
+.modalFiltros > #corpoModal {
+    height: 30%;
+}
+
+#corpoModal {
+    background-color: #D9D9D9;
+    align-items: center;
+    justify-content: center;
+    border-radius: 40px;
+    padding: 1%;
+    width: 40%;
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+}
+
+#nomeModal {
+    width: 50%;
+    margin-bottom: 1%;
+}
+
+#descModal {
+    resize: none;
+    height: 100%;
+    width: 50%;
+}
+
+#divDatas {
+    margin: 1%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#divDatas>div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.inputData {
+    font-family: 'Roboto', serif;
+    font-size: 1.25vw;
+    padding: 12px 16px;
+    margin: 5px;
+    border-radius: 18px;
+    border: solid 1px black;
+}
+
+.inputData:focus {
+    outline: none;
+}
+
+#selectTipos {
+    font-family: 'Roboto', serif;
+    font-size: 1.25vw;
+    padding: 12px 16px;
+    margin: 5px;
+    border-radius: 18px;
+    border: solid 1px black;
+}
+
+#divTipo {
+    margin-top: 2%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#divBotoes {
+    margin-top: 2%;
+}
+
+.btnFechar {
+    background-color: red;
+}
+.btnArquivar {
+    background-color: rgb(0, 95, 126);
+}
+
+#divVazio {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#semTarefas {
+    font-size: 3vw;
+}
+
+.barraInput {
+    font-family: 'Roboto', serif;
+    font-size: 1.25vw;
+    padding: 12px 25px;
+    width: 10%;
+    border-radius: 18px;
+    border: solid 1px black;
+}
+
+.barraInput:focus {
+    outline: none;
+}
+
+#pesquisa {
+    width: 40%;
+}
+
+@media screen and (max-width:1300px) {
+    #menuInferior {
+        display: flex;
+    }
+
+    #conteudo {
+        grid-template-columns: 1fr;
+    }
+
+    #corpoModal {
+        width: 90%;
+        height: 60%;
+    }
+
+    body,
+    .btn,
+    #pesquisa {
+        font-size: 2vw;
+    }
+}
+
+@media screen and (max-width:700px) {
+
+    body,
+    .btn,
+    #pesquisa {
+        font-size: 3vw;
+    }
+}
+
+@media screen and (max-width:700px) {
+    #pesquisa {
+        width: 30%;
+    }
+}

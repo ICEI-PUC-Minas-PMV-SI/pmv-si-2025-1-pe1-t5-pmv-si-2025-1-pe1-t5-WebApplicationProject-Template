@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Commit+ Home</title>
+  <script src="../scripts/login.js"></script>
+  <script>
+    initLoginApp();
+    
+    if (!usuarioCorrente.login) {
+      window.location.href = LOGIN_URL;
+    }
+    else{
+        window.location.href = "ListaTarefas.html";
+    }
+
+    function initPage() {
+      document.getElementById('btn_logout').addEventListener('click', logoutUser);
+      document.getElementById('nomeUsuario').innerHTML = usuarioCorrente.nome;
+    }
+
+    window.addEventListener('load', initPage);
+  </script>
+</head>
+<body>
+  <h1>Bem-vindo, <span id="nomeUsuario"></span>!</h1>
+  <button id="btn_logout">Sair</button>
+</body>
+</html>

@@ -1,0 +1,132 @@
+html,
+body {
+    font-family: 'Roboto', serif;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: calc(100% - 7vw);
+    font-size: 1.25vw;
+}
+
+header {
+    background-color: #227852;
+    box-shadow: 0px 1px 4px black;
+    margin-bottom: 2%;
+}
+
+#logo {
+    width: 17%;
+    min-width: 150px;
+    padding-top: 0.5%;
+    padding-bottom: 0.5%;
+    user-select: none;
+}
+
+#conteudo {
+    display: grid;
+    grid-template-columns: 10.4vw 1fr 1%;
+    gap: 2vw;
+    height: 100%;
+}
+
+.item-barra {
+    margin-top: 5%;
+    display: flex;
+    align-items: center;
+    user-select: none;
+}
+
+#barraLateral {
+    border-right: 2px solid #227852;
+    margin-left: 1%;
+    height: 100%;
+}
+
+.material-symbols-outlined {
+    font-size: 38px;
+    margin-right: 3%;
+}
+
+a {
+    text-decoration: none;
+    color: black
+}
+
+#principal {
+    padding: 1%;
+}
+
+.btn {
+    font-family: 'Roboto', serif;
+    font-size: 1.25vw;
+    background-color: #227852;
+    color: white;
+    padding: 12px 25px;
+    border-radius: 18px;
+    border: none;
+}
+
+.btn:hover {
+    cursor: pointer;
+}
+
+#menuInferior {
+    position: absolute;
+    background-color: white;
+    bottom: 0px;
+    margin-top: 1%;
+    width: 100%;
+    height: 8%;
+    display: none;
+    font-size: 2vw;
+    flex-direction: column;
+    user-select: none;
+}
+
+#textoMenu {
+    font-size: 40px;
+}
+
+#btnMenu {
+    background-color: #D9D9D9;
+    width: 100%;
+    height: 74px;
+    top: 0;
+    bottom: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#btnMenu:hover {
+    cursor: pointer;
+}
+
+#menuEscondido {
+    height: 100%;
+    display: none;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: row;
+}
+
+#menuEscondido>div>a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#menuEscondido>div>a>div {
+    background-color: #D9D9D9;
+    padding: 30px 50px 30px 30px;
+    margin: 5px;
+    border-radius: 30px;
+    font-size: 24px;
+    width: 130px;
+}
+
+@media screen and (max-width:1300px) {
+    #barraLateral {
+        display: none;
+    }
+}

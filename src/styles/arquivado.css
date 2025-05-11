@@ -1,0 +1,15 @@
+#barraBotoes {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+#cabecalhoArquivados {
+    display: flex;
+    margin: 30px 0px 30px 3%;
+    width: 96%;
+}
+.nodoTexto {
+    width: 20%;
+    margin-left: 5%;
+    text-align: center;
+}

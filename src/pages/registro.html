@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+  <link rel="stylesheet" href="../styles/stylelogin.css">
+  <link rel="icon" type="image/x-icon" href="../../docs/img/Icone.png">
+  <title>Commit+ Registro</title>
+  <script src="../scripts/login.js"></script>
+</head>
+<body>
+  <div class="login-box">
+    <h1>COMMIT+</h1>
+    <p>Crie sua conta para começar a usar o Commit+</p>
+    <form id="registerForm">
+      <input type="email" id="login" placeholder="Email" required />
+      <input type="password" id="senha" placeholder="Senha" required />
+      <input type="password" id="confirmarsenha" placeholder="Confirme sua Senha" required />
+      <button type="submit">Registrar</button>
+    </form>
+    <div class="options">
+      <a href="ListaTarefas.html">Esqueceu a senha?</a>
+      <a href="login.html">Já possui conta?</a>
+    </div>
+  </div>
+  <script>
+    document.getElementById("registerForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const email = document.getElementById("login").value;
+      const senha = document.getElementById("senha").value;
+      const confirmaSenha = document.getElementById("confirmarsenha").value;
+
+      if (senha !== confirmaSenha) {
+        alert("As senhas não coincidem.");
+        return;
+      }
+
+      const nome = email.split('@')[0];
+      const login = email;
+
+      addUser(nome, login, senha, email);
+    });
+  </script>
+</body>
+</html>

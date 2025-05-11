@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+  <link rel="stylesheet" href="../styles/stylelogin.css">
+  <link rel="icon" type="image/x-icon" href="../../docs/img/Icone.png">
+  <title>Commit+ Login</title>
+  <script src="../scripts/login.js"></script>
+  <script>
+    console.log("Login script carregado");
+    console.log("loginUser é do tipo:", typeof loginUser);
+  </script>
+</head>
+<body>
+  <div class="login-box">
+    <h1>COMMIT+</h1>
+    <p>Bem-vindo de volta ao Commit+!<br>Organize seu dia com facilidade.</p>
+    <form id="loginForm">
+      <input type="email" id="login" placeholder="Email" required />
+      <input type="password" id="senha" placeholder="Senha" required />
+      <button type="submit">Entrar</button>
+    </form>
+    <div class="options">
+      <a href="ListaTarefas.html">Esqueceu a senha?</a>
+      <a href="registro.html">Criar nova conta</a>
+    </div>
+  </div>
+  <script>
+    document.getElementById("loginForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const login = document.getElementById("login").value;
+      const senha = document.getElementById("senha").value;
+
+      if (loginUser(login, senha)) {
+        window.location.href = "ListaTarefas.html";
+      } else {
+        alert("Login inválido. Verifique seu e-mail e senha.");
+      }
+    });
+  </script>
+</body>
+</html>

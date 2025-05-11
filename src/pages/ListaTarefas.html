@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined&icon_names=calendar_month,delete,format_list_bulleted,home_storage,menu" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+    <link rel="stylesheet" href="../styles/styles.css">
+    <link rel="stylesheet" href="../styles/styleListaTarefas.css">
+    <link rel="icon" type="image/x-icon" href="../../docs/img/Icone.png">
+    <title>Tarefas</title>
+</head>
+
+<body>
+    <header>
+        <img src="../../docs/img/Logo.png" id="logo">
+    </header>
+    <div id="conteudo">
+        <sidebar id="barraLateral">
+            <a href="">
+                <div class="item-barra">
+                    <span class="material-symbols-outlined">
+                        format_list_bulleted
+                    </span> Tarefas
+                </div>
+            </a>
+            <a href="">
+                <div class="item-barra">
+                    <span class="material-symbols-outlined">
+                        calendar_month
+                    </span> Calendário
+                </div>
+            </a>
+            <a href="">
+                <div class="item-barra">
+                    <span class="material-symbols-outlined">
+                        home_storage
+                    </span> Arquivadas
+                </div>
+            </a>
+            <a href="">
+                <div class="item-barra">
+                    <span class="material-symbols-outlined">
+                        delete
+                    </span> Lixeira
+                </div>
+            </a>
+        </sidebar>
+        <main id="principal">
+            <div id="barraBotoes">
+                <div id="barra-1">
+                    <button id="btnAdd" class="btn">Adicionar</button>
+                    <input class="barraInput" id="pesquisa" maxlength="13" placeholder="Buscar">
+                </div>
+                <button id="btnFiltros" class="btn">Filtros</button>
+            </div>
+            <div>
+                <div id="cabecalhoTarefas">
+                    <div class="nodoTexto">Nome</div>
+                    <div class="nodoTexto">Data Add.</div>
+                    <div class="nodoTexto">Categoria</div>
+                    <div class="nodoTexto">Data Venc.</div>
+                </div>
+                <div id="lista">
+                </div>
+            </div>
+        </main>
+    </div>
+    <footer id="menuInferior">
+        <div id="btnMenu">
+            <span id="textoMenu" class="material-symbols-outlined">
+                menu
+            </span>
+        </div>
+        <div id="menuEscondido">
+            <div>
+                <a href="">
+                    <div class="item-barra">
+                        <span class="material-symbols-outlined">
+                            format_list_bulleted
+                        </span> Tarefas
+                    </div>
+                </a>
+                <a href="">
+                    <div class="item-barra">
+                        <span class="material-symbols-outlined">
+                            calendar_month
+                        </span> Calendário
+                    </div>
+                </a>
+            </div>
+            <div>
+                <a href="">
+                    <div class="item-barra">
+                        <span class="material-symbols-outlined">
+                            home_storage
+                        </span> Arquivadas
+                    </div>
+                </a>
+                <a href="">
+                    <div class="item-barra">
+                        <span class="material-symbols-outlined">
+                            delete
+                        </span> Lixeira
+                    </div>
+                </a>
+
+            </div>
+        </div>
+    </footer>
+    <script src="../scripts/ListaTarefas.js"></script>
+</body>
+
+</html>
