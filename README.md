@@ -1,4 +1,4 @@
-# Título do Projeto
+# Sistemas de fretes
 
 `CURSO: Sistemas de Informação`
 
@@ -6,20 +6,20 @@
 
 `SEMESTRE: 1º`
 
-Descrever resumidamente, em um ou dois parágrafos, o projeto que está sendo desenvolvido.
+A terceirização de fretes é uma solução estratégica para empresas que precisam otimizar sua logística e reduzir custos operacionais. No contexto de e-commerce e distribuição de produtos, encontrar transportadoras confiáveis pode ser um desafio, especialmente para quem é novo em uma cidade. Este sistema busca simplificar o acesso a motoristas adequados, oferecendo uma plataforma eficiente para comparação de preços, negociação e fechamento de contratos de frete.
 
 ## Integrantes
 
-* Nome completo do aluno 1
-* Nome completo do aluno 2
-* Nome completo do aluno 3
-* Nome completo do aluno 4
+* Nicolas Eduardo Claudio
+* Matheus Antônio Gonçalves Sales
+* Santiago Pereira da Silva
+* Lucas  Oliveira Muzzi
 * Nome completo do aluno 5
 
 
 ## Orientador
 
-* Nome completo do professor 1
+* Clovis Lemos Tavares.
 
 # Planejamento
 
