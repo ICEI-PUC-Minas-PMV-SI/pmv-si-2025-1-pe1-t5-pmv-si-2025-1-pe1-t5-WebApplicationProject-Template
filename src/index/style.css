@@ -1,0 +1,1002 @@
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100vh;
+    margin: 0;
+    scroll-behavior: smooth;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    background-color: #1E3A8A;
+    display: grid;
+    grid-template-columns: 70% 30%;
+}
+
+.botoes {
+    align-content: center;
+}
+
+.login-content {
+    flex: 1 0 auto;
+    display: grid;
+    grid-template-columns: 25% 50% 25%;
+    align-items: center;
+    justify-items: center;
+    padding: 10px;
+}
+
+.login-wrapper {
+    box-sizing: border-box;
+    border-radius: 10px;
+/*    border-style: solid;
+    border-width: 1px;
+    border-color: #E5E5E5;*/
+    font-size: large;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+    padding: 5px 10px 10px 5px;
+}
+
+.text-form {
+    font-size: medium;
+}
+
+#text-h4 {
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    justify-content: center;
+}
+
+#username {
+    width: min(300px, 100%);
+    font-size: medium;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #E5E5E5;
+    border-radius: 5px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    padding: 5px;
+}
+
+#password {
+    width: min(300px, 100%);
+    font-size: medium;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #E5E5E5;
+    border-radius: 5px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    padding: 5px;
+}
+
+#email-input {
+    width: min(300px, 100%);
+    font-size: medium;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #E5E5E5;
+    border-radius: 5px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    padding: 5px;
+}
+
+#password-input {
+    width: min(300px, 100%);
+    font-size: medium;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #E5E5E5;
+    border-radius: 5px;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    padding: 5px;
+}
+
+#checkbox-input {
+    margin-top: 3px;
+    margin-bottom: 50px;
+}
+
+.checkbox-form {
+    font-size: smaller;
+}
+
+#login-form {
+    width: min(300px, 100%);
+    margin-top: 30px;
+    margin-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+}
+
+#cadastrar {
+    font-size: smaller;
+}
+
+
+
+.cadastro-content {
+    flex: 1 0 auto;
+    display: grid;
+    grid-template-columns: 15% 70% 15%;
+    align-items: center;
+    justify-items: center;
+    padding: 10px;
+}
+
+.cadastro-wrapper {
+    box-sizing: border-box;
+/*    border-radius: 10px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #E5E5E5;*/
+    font-size: large;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+    padding: 5px 10px 10px 5px;
+}
+
+
+.cadastro-prestador-content {
+    flex: 1 0 auto;
+    display: grid;
+    grid-template-columns: 5% 90% 5%;
+    align-items: center;
+    justify-items: center;
+    padding: 10px;
+}
+
+.cadastro-prestador-wrapper {
+    box-sizing: border-box;
+/*    border-radius: 10px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #E5E5E5;*/
+    font-size: large;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+    width: 90%;
+    padding: 5px;
+}
+
+#form-id {
+    color: gray;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    margin: 2px;
+}
+
+
+.contatos-content {
+    flex: 1 0 auto;
+    display: grid;
+    grid-template-columns: 3% 94% 3%;
+    align-items: center;
+    justify-items: center;
+    padding: 10px;
+}
+
+.contatos-wrapper {
+    box-sizing: border-box;
+/*    border-radius: 10px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #E5E5E5;*/
+    font-size: large;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 94%;
+    padding: 5px;
+}
+
+
+
+
+
+.text-cadastro {
+    font-size: small;
+}
+
+.text-info {
+    font-size: medium;
+}
+
+#form-tipo-usuario {
+    width: min(630px, 100%);
+    border-radius: 10px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #E5E5E5;
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    flex-direction: row;
+    padding: 10px;
+    margin-top: 10px;
+}
+
+#cliente {
+    font-size: medium;
+    padding: 5px;
+    margin-right: 10px;
+}
+
+#prestador {
+    font-size: medium;
+    padding: 5px;
+    margin-right: 5px;
+}
+
+
+span {
+    font-size: small;
+    color: gray;
+}
+
+#span-usuario {
+    margin-left: 25px;
+}
+
+#span-prestador {
+    margin-left: 25px;
+}
+
+#span-tipo-cadastro {
+    margin: 20px;
+    color: #000000;
+}
+
+#span-aceite {
+    font-size: small;
+    color: #000000;
+}
+
+#span-termos {
+    margin-left: 30px;
+}
+
+
+
+/*.campos-form {
+    width: min(800px, 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+}*/
+
+
+#form-cadastro {
+    width: min(630px, 100%);
+    border-radius: 10px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #E5E5E5;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+
+#login-form {
+    width: min(630px, 100%);
+    border-radius: 10px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #E5E5E5;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+
+
+#form-contato {
+    width: min(630px, 100%);
+    border-radius: 10px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #E5E5E5;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+
+#form-contato-servicos {
+    width: min(800px, 100%);
+    border-radius: 10px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #E5E5E5;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+
+
+#botao-cadastrar {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+
+}
+
+#botao-salvar {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+
+}
+
+#cadastrar {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+
+}
+
+#txt_login {
+    width: min(610px, 100%);
+    font-size: medium;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #E5E5E5;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    padding: 5px;
+}
+
+
+#txt_nome {
+    width: min(610px, 100%);
+    font-size: medium;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #E5E5E5;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    padding: 5px;
+}
+
+#nome-cadastro {
+    width: min(610px, 100%);
+    font-size: medium;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #E5E5E5;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    padding: 5px;
+}
+
+#inputId {
+    width: 5%;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #E5E5E5;
+    border-radius: 5px;
+}
+
+#inputNome {
+    width: 100%;
+    font-size: medium;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #E5E5E5;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    padding: 5px;
+}
+
+
+#txt_email {
+    width: min(610px, 100%);
+    font-size: medium;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #E5E5E5;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    padding: 5px;
+}
+
+
+#email-cadastro {
+    width: min(610px, 100%);
+    font-size: medium;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #E5E5E5;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    padding: 5px;
+}
+
+#inputEmail {
+    width: 100%;
+    font-size: medium;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #E5E5E5;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    padding: 5px;
+}
+
+#celular-cadastro {
+    width: min(610px, 100%);
+    font-size: medium;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #E5E5E5;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    padding: 5px;
+}
+
+
+#inputCelular {
+    width: 100%;
+    font-size: medium;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #E5E5E5;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    padding: 5px;
+}
+
+#dtnasc-cadastro {
+    width: min(610px, 100%);
+    font-size: medium;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #E5E5E5;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    padding: 5px;
+}
+
+
+#inputDtnasc {
+    width: min(610px, 100%);
+    font-size: medium;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #E5E5E5;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    padding: 5px;
+}
+
+#inputCidade {
+    width: 100%;
+    font-size: medium;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #E5E5E5;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    padding: 5px;
+}
+
+#inputOcupacao {
+    width: 100%;
+    font-size: medium;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #E5E5E5;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    padding: 5px;
+}
+
+
+#inputTipo {
+    width: 100%;
+    font-size: medium;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #E5E5E5;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    padding: 5px;
+}
+
+
+#inputNome {
+    width: 100%;
+    font-size: medium;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #E5E5E5;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    padding: 5px;
+}
+
+#inputResumo {
+    width: 100%;
+    height: 100px;
+    font-size: medium;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #E5E5E5;
+    resize: none;
+}
+
+#txt_senha {
+    width: min(610px, 100%);
+    font-size: medium;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #E5E5E5;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    padding: 5px;
+}
+
+#txt_senha2 {
+    width: min(610px, 100%);
+    font-size: medium;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #E5E5E5;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    padding: 5px;
+}
+
+#password-cadastro {
+    width: min(610px, 100%);
+    font-size: medium;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #E5E5E5;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    padding: 5px;
+}
+
+#inputSenha {
+    width: min(610px, 100%);
+    font-size: medium;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #E5E5E5;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    padding: 5px;
+}
+
+
+#checkbox-input {
+    margin-top: 3px;
+    margin-bottom: 50px;
+}
+
+/*
+#msg {
+    color: red;
+}
+*/
+
+
+.servicos-content {
+    flex: 1 0 auto;
+    display: grid;
+    grid-template-columns: 10% 80% 10%;
+    align-items: center;
+    justify-items: center;
+}
+
+.servicos-wrapper {
+    box-sizing: border-box;
+    font-size: medium;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+    width: 80%;
+    padding: 5px 10px 10px 5px;
+}
+
+
+#form-servicos {
+    width: min(800px, 100%);
+    border-radius: 10px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #E5E5E5;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-items: center;
+    padding: 10px;
+}
+
+.servico-cadastro {
+    font-size: medium;
+}
+
+#msg-prestador {
+    font-size: small;
+    color: gray;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+
+#servico1 {
+    border-bottom-style: solid;
+/*    padding-bottom: 8px; */
+    border-bottom-color:#E5E5E5;
+    border-bottom-width: 1px;
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 10px;
+}
+
+#servico2 {
+    border-bottom-style: solid;
+/*    padding-bottom: 8px; */
+    border-bottom-color:#E5E5E5;
+    border-bottom-width: 1px;
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 10px;
+}
+
+#servico3 {
+    border-bottom-style: solid;
+/*    padding-bottom: 8px; */
+    border-bottom-color:#E5E5E5;
+    border-bottom-width: 1px;
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 10px;
+}
+
+#servico4 {
+    border-bottom-style: solid;
+    padding-bottom: 8px;
+    border-bottom-color:#E5E5E5;
+    border-bottom-width: 1px;
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 35px;
+}
+
+#servico-cadastro {
+    width: 280px;
+    border-radius: 5px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #E5E5E5;
+    font-size: medium;
+    padding: 2px;
+    margin: 3px;
+}
+
+#valor-cadastro {
+    width: 220px;
+    border-radius: 5px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #E5E5E5;
+    font-size: medium;
+    padding: 2px;
+    margin: 3px;
+}
+
+#tempo-cadastro {
+    width: 250px;
+    border-radius: 5px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #E5E5E5;
+    font-size: medium;
+    padding: 2px;
+    margin: 3px;
+}
+
+footer {
+    height: 60px;
+    background-color: #E5E5E5;
+}
+
+.icn_rodape {
+    margin-top: 15px;
+}
+
+
+#btncab1 {
+    height: 60px;
+    width: 180px;
+    white-space: nowrap;
+    border-width: 1px;
+    border-color: darkgray;
+    border-radius: 5px;
+    font-size: large;
+    color: white;
+    background-color: #F97316;
+    margin: 3px;
+}
+
+#btncab2 {
+    height: 60px;
+    width: 180px;
+    white-space: nowrap;
+    border-width: 1px;
+    border-color: darkgray;
+    border-radius: 5px;
+    font-size: large;
+    color: white;
+    background-color: #F97316;
+    margin: 3px;
+}
+
+#btn_logout {
+    height: 60px;
+    width: 180px;
+    white-space: nowrap;
+    border-width: 1px;
+    border-color: darkgray;
+    border-radius: 5px;
+    font-size: large;
+    color: darkred;
+    background-color: lightcoral;
+    margin: 3px;
+}
+
+
+
+#btn-login {
+    width: min(300px, 100%);
+    height: 50px;
+    white-space: nowrap;
+    border-width: 1px;
+    border-color: darkgray;
+    border-radius: 5px;
+    font-size: medium;
+    color: white;
+    background-color: #000000;
+    margin: 3px;
+}
+
+#btn_salvar {
+    width: min(300px, 100%);
+    height: 50px;
+    white-space: nowrap;
+    border-width: 1px;
+    border-color: darkgray;
+    border-radius: 5px;
+    font-size: medium;
+    color: white;
+    background-color: #000000;
+    margin: 3px;
+}
+
+
+
+#btnInsert {
+    width: min(300px, 100%);
+    height: 50px;
+    white-space: nowrap;
+    border-width: 1px;
+    border-color: darkgray;
+    border-radius: 5px;
+    font-size: medium;
+    color: white;
+    background-color: #000000;
+    margin: 3px;
+}
+
+#btnClear {
+    width: min(300px, 100%);
+    height: 50px;
+    white-space: nowrap;
+    border-width: 1px;
+    border-color: darkgray;
+    border-radius: 5px;
+    font-size: medium;
+    color: white;
+    background-color: #000000;
+    margin: 3px;
+}
+
+
+
+#icnrod1 {
+    margin-left: 20px;
+}
+
+#icnrod2 {
+    margin-left: 6px;
+}
+
+#icnrod3 {
+    margin-left: 6px;
+}
+
+
+.termos-content {
+    flex: 1 0 auto;
+    display: grid;
+    grid-template-columns: 20% 60% 20%;
+    align-items: center;
+    justify-items: center;
+    text-align: justify;
+}
+
+.termos-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: justify;
+    width: 80%;
+    padding: 5px 10px 10px 5px;
+    margin-bottom: 10px;
+}
+
+h2 {
+    align-items: center;
+    justify-items: center;
+    text-align: center;
+    margin-top: 60px;
+    margin-bottom: 40px;
+}
+
+
+.home-content {
+    flex: 1 0 auto;
+    display: grid;
+    grid-template-columns: 15% 85%;
+    align-items: center;
+    justify-items: center;
+    text-align: center;
+}
+
+.menu_lateral {
+    height: 100%;
+    width: 100%;
+    background: #1E3A8A;
+    background: linear-gradient(180deg,rgba(30, 58, 138, 1) 0%, rgba(48, 207, 208, 1) 100%);
+    border-top-style: solid;
+    border-top-width: 1px;
+    border-top-color: #E5E5E5;
+    padding: 10px 5px 5px 0px;
+    justify-items: center;
+}
+
+.home-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    text-align: justify;
+    width: 85%;
+    padding: 5px 10px 10px 5px;
+    margin-bottom: 100px;
+}
+
+.btnlat {
+    height: 60px;
+    width: 95%;
+    border-width: 1px;
+    border-color: black;
+    border-radius: 5px;
+    font-size: large;
+    color: white;
+    background: #F97316;
+    background: linear-gradient(180deg,rgba(249, 115, 22, 1) 90%, rgba(248, 54, 0, 1) 100%);
+    margin: 10px;
+    text-align: start;
+    display: flex;
+    align-items: center;
+}
+
+#icn_lat {
+    margin: 10px;
+    display: flex;
+    align-items: center;
+}
+
+#menu {
+    margin-bottom: 20px;
+}
+
+#institucional {
+    background-color: #9af3f3;
+    color: #071c57;
+    margin-left: 5px;
+    margin-top: 35px;
+    font-size:small;
+    text-align: left;
+    padding: 2px 10px 15px 10px;
+}
+
+
+
+.tipo-cadastro-content {
+    flex: 1 0 auto;
+    display: grid;
+    grid-template-columns: 5% 90% 5%;
+    align-items: center;
+    justify-items: center;
+    text-align: justify;
+}
+
+.tipo-cadastro-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: justify;
+    justify-content: center;
+    width: 90%;
+    padding: 5px 10px 10px 5px;
+    margin-bottom: 10px;
+}
+
+#btn-tipo-cliente {
+    display: flex;
+    flex-direction: column;
+    font-size: large;
+    justify-content: center;
+    align-items: center;
+    justify-items: start;
+    width: 200px;
+    height: 150px;
+    margin: 30px;
+    background-color: #E5E5E5;
+}
+
+
+#form-lista {
+/*    border-radius: 10px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #E5E5E5;*/
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+    justify-content: center;
+}
+
+#grid-contatos {
+    font-size: small;
+    margin-top: 5px;
+}
+
+.filtro-lista {
+    display: inline-flex;
+}
+
+

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSG - Página inicial</title>
+    <link rel="stylesheet" href="/src/index/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter">
+
+    <style>
+        * {font-family: "Inter", sans-serif;}
+    </style>
+
+</head>
+
+<body>
+
+<header class="cabecalho">
+    <div class="logo">
+        <a href="/src/index/content/home.html">
+        <img id="logo" width="180" height="113" src="/src/index/imgs/logo.png">
+        </a>
+    </div>
+    <div class="botoes">
+        <button id="btncab1" type="button" class="btn" onclick="document.location='/src/index/content/tutorial.html'">Passo a passo</button>
+        <button id="btncab2" type="button" class="btn" onclick="document.location='/src/index/login/login.html'">Entrar/Cadastrar</button>
+    </div>
+</header>
+
+<main class="home-content">
+    <div class="menu_lateral">
+        <aside id="menu">
+            <button class="btnlat" id="btnlat1" type="button" class="btn" onclick="document.location='/src/index/content/home.html#reformas'">
+            <img id="icn_lat" width="35" height="35" src="/src/index/imgs/icn_reformas.png">
+                Reformas
+            </button>
+            <button class="btnlat" id="btnlat2" type="button" class="btn" onclick="document.location='/src/index/content/home.html#limpeza'">
+            <img id="icn_lat" width="35" height="35" src="/src/index/imgs/icn_limpeza.png">
+                Limpeza e conservação
+            </button>
+            <button class="btnlat" id="btnlat3" type="button" class="btn" onclick="document.location='/src/index/content/home.html#domesticos'">
+            <img id="icn_lat" width="35" height="35" src="/src/index/imgs/icn_servicos.png">
+                Serviços domésticos
+            </button>
+            <button class="btnlat" id="btnlat4" type="button" class="btn" onclick="document.location='/src/index/content/home.html#outros'">
+            <img id="icn_lat" width="35" height="35" src="/src/index/imgs/icn_outros.png">
+                Outros serviços
+            </button>
+        </aside>
+        <div id="institucional"> 
+            <h3>Institucional</h3>
+            <p>Quem somos?</p>
+            <p>Fale conosco</p>
+            <p><a href="/src/index/content/termos.html">Termos de uso</a></p>
+            <p><a href="/src/index/content/termos.html">Política de privacidade</a></p>
+        </div>
+    </div>
+
+    <div class="home-wrapper">
+        <div id="titulo_home">
+            <h2>Olá, seja bem-vindo(a) ao CSG!</h2>
+            <p>Aqui você encontra uma ampla lista de prestadores de serviços em reformas e manutenção, 
+                limpeza e conservação, serviços domésticos, entre outros.</p>
+            <p>Basta se cadastrar, escolher o prestador(a) que te interessa e entrar em contato como você preferir!</p>
+        </div>
+        <div id="lista-topicos">
+            <div id="reformas">
+            <h3>Reformas</h3>
+            <ul>
+                <li>Pintura interna e externa</li>
+                <li>Reparos hidráulicos e elétricos</li>
+                <li>Instalação de pisos e revestimentos</li>
+                <li>Gesso, drywall e forros</li>
+                <li>Pequenas construções e ampliações</li>
+            </ul>
+            </div>
+            <div id="limpeza">
+            <h3>Limpeza e conservação</h3>
+            <ul>
+                <li>Limpeza pesada e pós-obra</li>
+                <li>Limpeza de rotina (diária, semanal ou mensal)</li>
+                <li>Faxinas e higienização profunda</li>
+                <li>Limpeza de vidros, estofados e carpetes</li>
+                <li>Limpeza de escritórios, condomínios e lojas</li>
+            </ul>
+            </div>
+            <div id="domesticos">
+            <h3>Serviços domésticos</h3>
+            <ul>
+                <li>Diaristas</li>
+                <li>Passadeiras e cozinheiras</li>
+                <li>Cuidadores de idosos e babás</li>
+                <li>Organização de ambientes</li>
+                <li>Serviços sob demanda</li>
+            </ul>
+            </div>
+            <div id="outros">
+            <h3>Outros serviços</h3>
+            <ul>
+                <li>Segurança particular</li>
+                <li>Personal trainner</li>
+                <li>Motorista</li>
+                <li>Professor(a)</li>
+                <li>Montagem e desmontagem de móveis</li>
+            </ul>
+            </div>
+        </div>
+        <h3>Atendimentos em Belo Horizonte e Região Metropolitana!</h3>
+        <h3>Cadastre-se agora mesmo! Basta clicar <a href="/src/index/tipo-cadastro.html"><b>aqui</b></a>.</h3>
+    </div>
+
+</main>
+
+<footer class="rodape">
+    <div class="icn_rodape">
+        <a href="https://www.instagram.com/" target="_blank">
+        <img id="icnrod1" width="35" height="35" src="/src/index/imgs/instagram_icn.png">
+        </a>
+        <a href="https://br.linkedin.com/" target="_blank">
+        <img id="icnrod2" width="35" height="35" src="/src/index/imgs/linkedin_icn.png">
+        </a>
+        <a href="https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2025-1-pe1-t5-g5-turma5/tree/main" target="_blank">
+        <img id="icnrod3" width="35" height="35" src="/src/index/imgs/github_icn.png">
+        </a>
+    </div>
+</footer>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>    
+</body>
+
+</html>

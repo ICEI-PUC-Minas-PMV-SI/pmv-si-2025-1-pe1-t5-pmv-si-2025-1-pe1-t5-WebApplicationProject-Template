@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CSG - Catálogo de Prestadores</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+<!--    <link rel="stylesheet" href="style_.css">   -->
+    <link rel="stylesheet" href="/src/index/style.css">
+    <style>
+        * {font-family: "Inter", sans-serif;}
+    </style>
+
+<!-- TESTE DE ACESSAR A PAGINA SOMENTE APOS LOGIN-->
+
+    <script src="login.js"></script>
+    <script>
+        // Verifica se o usuário já esta logado e se negativo, redireciona para tela de login        
+        if (!usuarioCorrente.login) {
+            window.location.href = LOGIN_URL;
+        }
+
+        function exibeUsuarios() {
+            
+            // Popula a tabela com os registros do banco de dados
+            let listaUsuarios = '';
+            for (i = 0; i < db_usuarios.usuarios.length; i++) {
+                let usuario = db_usuarios.usuarios[i];
+                listaUsuarios += `<tr><td scope="row">${usuario.nome}</td><td>${usuario.login}</td><td>${usuario.email}</td></tr>`;
+            }
+
+            // Substitui as linhas do corpo da tabela
+            document.getElementById("table-usuarios").innerHTML = listaUsuarios
+
+        }
+
+        function initPage() {
+
+            // Associa a função de logout ao botão
+            document.getElementById('btn_logout').addEventListener('click', logoutUser);
+
+            // Informa o nome do usuário logado
+            document.getElementById('nomeUsuario').innerHTML = usuarioCorrente.nome;
+
+            // Lista os usuários 
+            exibeUsuarios ();
+        }
+
+        // Associa ao evento de carga da página a função para verificar se o usuário está logado
+        window.addEventListener('load', initPage);
+    </script>
+
+
+<!-- FINAL DO TESTE -->
+
+</head>
+
+<body>
+
+<header class="cabecalho">
+    <div class="logo">
+        <a href="/src/index/content/home.html">
+        <img id="logo" width="180" height="113" src="/src/index/imgs/logo.png">
+        </a>
+    </div>
+    <div class="botoes">
+<!--        <button id="btncab1" type="button" class="btn" onclick="document.location='/src/index/content/tutorial.html'">Passo a passo</button>-->
+<!--        <button id="btncab2" type="button" class="btn" onclick="document.location='login.html'">Entrar/Cadastrar</button> -->
+        <button id="btn_logout">SAIR</button>
+    </div>
+</header>
+
+<main class="contatos-content">
+<div class=""></div>
+<div id="login" class="contatos-wrapper">
+
+
+    <h3><b>Catálogo de Prestadores</b></h3>
+
+    <div class="container">
+        <div class="row">
+            <div id="msg" class="col-sm-10 offset-sm-1 ">
+                <!--<div class="alert alert-warning">Contato não encontrado.</div>-->
+            </div>
+        </div>
+<!--
+        <div class="row">
+            <div id="msg" class="col-sm-2 offset-sm-10 ">
+                <a href="cadastro-prestador.html"><input type="button" class="btn btn-warning" id="btnClear" value="Cadastro"></a>
+            </div>
+        </div>        
+-->
+
+
+        <form id="form-lista">            
+            <div>
+                <div class="filtro-lista">
+                    <select name="filtro_cidade" id="filtro_cidade" onchange="ListaContatos()" class="form-control">
+                        <option value="">-- Selecione uma cidade --</option>
+                        <option value="Belo Horizonte">Belo Horizonte</option>
+                        <option value="Contagem">Contagem</option>
+                        <option value="Betim">Betim</option>
+                        <option value="Esmeraldas">Esmeraldas</option>
+                        <option value="Ibirité">Ibirité</option>
+                        <option value="Itaúna">Itaúna</option>
+                        <option value="Lagoa Santa">Lagoa Santa</option>
+                        <option value="Nova Lima">Nova Lima</option>
+                        <option value="Pará de Minas">Pará de Minas</option>
+                        <option value="Ribeirão das Neves">Ribeirão das Neves</option>
+                        <option value="Santa Luzia">Santa Luzia</option>
+                        <option value="Sete Lagoas">Sete Lagoas</option>
+                        <option value="Vespasiano">Vespasiano</option>
+                        <option value="Outros da Grande BH">Outros da Grande BH</option>
+                        <option value="Outros de MG">Outros de MG</option>
+                        <option value="Outros Estados">Outros Estados</option>
+                    </select>
+                </div>
+                <div class="filtro-lista">
+                    <select name="filtro_tipo" id="filtro_tipo" onchange="ListaContatos()"  class="form-control">
+                        <option value="">-- Selecione o tipo de serviço --</option>
+                        <option value="Reformas">Reformas</option>
+                        <option value="Limpeza e conservação">Limpeza e conservação</option>
+                        <option value="Serviços domésticos">Serviços domésticos</option>
+                        <option value="Outros serviços">Outros serviços</option>
+                    </select>
+                </div>
+                <div class="filtro-lista">
+                    <select name="filtro_ocupacao" id="filtro_ocupacao" onchange="ListaContatos()"  class="form-control">
+                        <option value="">-- Selecione a ocupação --</option>
+                        <option value="Pedreiro">Pedreiro</option>
+                        <option value="Eletricista">Eletricista</option>
+                        <option value="Encanador">Encanador</option>
+                        <option value="Pintor">Pintor</option>
+                        <option value="Faxineiro(a)">Faxineiro(a)</option>
+                        <option value="Diarista">Diarista</option>
+                        <option value="Zelador">Zelador</option>
+                        <option value="Auxiliar de limpeza">Auxiliar de limpeza</option>
+                        <option value="Babá">Babá</option>
+                        <option value="Cozinheira">Cozinheira</option>
+                        <option value="Cuidador de idosos">Cuidador de idosos</option>
+                        <option value="Personal trainner">Personal trainner</option>
+                        <option value="Motorista">Motorista</option>
+                        <option value="Jardineiro">Jardineiro</option>
+                        <option value="Segurança particular">Segurança particular</option>
+                        <option value="Outros">Outros</option>
+                    </select>
+                </div>
+            </div>
+        </form>
+
+        <div class="row">
+            <div class="col-sm-12">
+                <table id="grid-contatos" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Nome</th>
+                            <th scope="col">Celular</th>
+                            <th scope="col">E-mail</th>
+                            <th scope="col">Cidade</th>
+                            <th scope="col">Tipo de Serviço</th>
+                            <th scope="col">Ocupação</th>
+                        </tr>
+                    </thead>
+                    <tbody id="table-contatos">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+</div>
+<div class=""></div>
+</main>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script src="app.js"></script>
+    <script>
+        // função para listar na tabela os contatos que estão associados aos filtros
+        function ListaContatos() {
+            let contatos =  db.contatos
+           
+            // Obtem os dados informados pelo usuário nos filtros
+            let fcid = document.getElementById('filtro_cidade').value;
+            let ftip = document.getElementById('filtro_tipo').value;
+            let focp = document.getElementById('filtro_ocupacao').value;
+
+            // limpa a lista de contatos apresentados
+            $("#table-contatos").empty();
+
+            // Popula a tabela com os registros do banco de dados
+            for (let index = 0; index < contatos.length; index++) {
+                const contato = contatos[index];
+
+                // Verifica se os dados do contato batem com os filtros
+                if (((contato.cidade == fcid) || (fcid == '')) &&
+                    ((contato.tipo == ftip) || (ftip == '')) &&
+                    ((contato.ocupacao == focp) || (focp == ''))) {
+                   
+                    // Inclui o contato na tabela    
+                    $("#table-contatos").append(`<tr><td scope="row">${contato.id}</td>
+                                                    <td>${contato.nome}</td>
+                                                    <td>${contato.celular}</td>
+                                                    <td>${contato.email}</td>
+                                                    <td>${contato.cidade}</td>
+                                                    <td>${contato.tipo}</td>
+                                                    <td>${contato.ocupacao}</td>
+                                                </tr>`);
+                }
+            }
+
+        }
+
+
+        window.onload = () => {
+            ListaContatos()
+        }
+    </script>
+
+<footer class="rodape">
+    <div class="icn_rodape">
+        <a href="https://www.instagram.com/" target="_blank">
+        <img id="icnrod1" width="35" height="35" src="/src/index/imgs/instagram_icn.png">
+        </a>
+        <a href="https://br.linkedin.com/" target="_blank">
+        <img id="icnrod2" width="35" height="35" src="/src/index/imgs/linkedin_icn.png">
+        </a>
+        <a href="https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2025-1-pe1-t5-g5-turma5/tree/main" target="_blank">
+        <img id="icnrod3" width="35" height="35" src="/src/index/imgs/github_icn.png">
+        </a>
+    </div>
+</footer>
+
+<!-- parte do teste para acesso somente aos usuarios logados -->
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+<!-- fim da parte do teste-->
+
+</body>
+
+</html>
+

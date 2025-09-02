@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CSG - Cadastro de Prestador(a)</title>
+<!--    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="/src/index/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter">
+    <style>
+        * {font-family: "Inter", sans-serif;}
+    </style>
+</head>
+
+<body onload="init()">
+
+<header class="cabecalho">
+    <div class="logo">
+        <a href="/src/index/content/home.html">
+        <img id="logo" width="180" height="113" src="/src/index/imgs/logo.png">
+        </a>
+    </div>
+    <div class="botoes">
+        <button id="btncab1" type="button" class="btn" onclick="document.location='/src/index/content/tutorial.html'">Passo a passo</button>
+        <button id="btncab2" type="button" class="btn" onclick="document.location='/src/index/login/login.html'">Entrar/Cadastrar</button>
+    </div>
+</header>
+
+
+<main class="cadastro-prestador-content">
+<div class=""></div>
+<div id="login" class="cadastro-prestador-wrapper">
+
+    <div class="container">
+        <div class="row">
+            <div id="msg" class="col-sm-10 offset-sm-1 ">
+                <!--<div class="alert alert-warning">Contato não encontrado.</div>-->
+            </div>
+    </div>
+
+    <div id="text-h4"><h4><b>Cadastro de prestador(a) de serviços</b></h4></div>
+    <span>Cadastre-se como prestador(a) de serviços para ser encontrado(a) por clientes interessados.</span>
+
+    <form id="form-contato-servicos">
+
+        <div id="form-id">
+            <label for="inputId">#</label>
+            <input type="text" class="form-control" id="inputId" disabled>
+        </div>
+
+        <div class="form-group">
+            <label for="inputNome" class="text-info">Nome completo</label>
+            <input type="text" class="form-control" id="inputNome" required placeholder="Nome completo">
+        </div>
+
+        <div class="form-group">
+            <label for="inputEmail" class="text-info">E-mail</label>
+            <input type="email" class="form-control" id="inputEmail" required placeholder="email@exemplo.com">
+        </div>
+
+        <div class="form-group">
+            <label for="inputCelular" class="text-info">Celular</label>
+            <input type="tel" class="form-control" id="inputCelular" pattern="\(\d{2}\) \d{5}-\d{4}" placeholder="(99) 99999-9999" required title="Formato esperado: (99) 99999-9999">
+        </div>
+
+        <div class="form-group">
+            <label for="inputCidade" class="text-info">Cidade</label>
+            <select class="form-control" id="inputCidade" required>
+                <option value="">-- Selecione uma cidade --</option>
+                <option value="Belo Horizonte">Belo Horizonte</option>
+                <option value="Contagem">Contagem</option>
+                <option value="Betim">Betim</option>
+                <option value="Esmeraldas">Esmeraldas</option>
+                <option value="Ibirité">Ibirité</option>
+                <option value="Itaúna">Itaúna</option>
+                <option value="Lagoa Santa">Lagoa Santa</option>
+                <option value="Nova Lima">Nova Lima</option>
+                <option value="Pará de Minas">Pará de Minas</option>
+                <option value="Ribeirão das Neves">Ribeirão das Neves</option>
+                <option value="Santa Luzia">Santa Luzia</option>
+                <option value="Sete Lagoas">Sete Lagoas</option>
+                <option value="Vespasiano">Vespasiano</option>
+                <option value="Outros da Grande BH">Outros da Grande BH</option>
+                <option value="Outros de MG">Outros de MG</option>
+                <option value="Outros Estados">Outros Estados</option>
+            </select>
+        </div>
+<!-- FORMATO ORIGINAL
+        <div class="form-group">
+            <label for="inputTipo" class="text-info">Tipo de Serviço</label>
+            <select type="text" class="form-control" id="inputTipo" required>
+                <option value="Reformas">Reformas</option>
+                <option value="Limpeza e conservação">Limpeza e conservação</option>
+                <option value="Serviços domésticos">Serviços domésticos</option>
+                <option value="Outros serviços">Outros serviços</option>
+            </select>
+        </div>
+
+
+
+
+        <div class="form-group">
+            <label for="inputOcupacao" class="text-info">Ocupação</label>
+            <input type="text" class="form-control" id="inputOcupacao" required>
+        </div>
+-->
+
+  <div class="form-group">
+    <label for="inputTipo" class="text-info">Tipo de Serviço</label>
+    <select class="form-control" id="inputTipo" required onchange="atualizarOcupacoes()">
+      <option value="">-- Selecione o tipo de serviço --</option>
+      <option value="Reformas">Reformas</option>
+      <option value="Limpeza e conservação">Limpeza e conservação</option>
+      <option value="Serviços domésticos">Serviços domésticos</option>
+      <option value="Outros serviços">Outros serviços</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label for="inputOcupacao" class="text-info">Ocupação</label>
+    <select class="form-control" id="inputOcupacao" required>
+      <option value="">-- Selecione uma ocupação --</option>
+    </select>
+  </div>
+
+  <script>
+    const ocupacoes = {
+      "Reformas": ["Pedreiro", "Eletricista", "Encanador", "Pintor"],
+      "Limpeza e conservação": ["Faxineiro(a)", "Diarista", "Zelador", "Auxiliar de limpeza"],
+      "Serviços domésticos": ["Babá", "Cozinheira", "Cuidador de idosos"],
+      "Outros serviços": ["Personal trainner", "Motorista", "Jardineiro", "Segurança particular"]
+    };
+
+    function atualizarOcupacoes() {
+      const tipo = document.getElementById("inputTipo").value;
+      const ocupacao = document.getElementById("inputOcupacao");
+
+      // Limpa opções anteriores
+      ocupacao.innerHTML = '<option value="">-- Selecione uma ocupação --</option>';
+
+      // Adiciona novas opções se houver
+      if (ocupacoes[tipo]) {
+        ocupacoes[tipo].forEach(function(item) {
+          const option = document.createElement("option");
+          option.value = item;
+          option.textContent = item;
+          ocupacao.appendChild(option);
+        });
+      }
+    }
+  </script>
+
+<!--
+        <div id="msg-prestador">
+            Prestador(a), caso queira, descreva um resumo sobre você e os serviços que você oferece.
+        </div>
+
+        <div class="form-group">
+            <label for="inputResumo" class="text-info">Resumo do prestador(a)</label><br>
+            <input type="text" class="form-control" id="inputResumo" maxlength="300">
+        </div>-->
+
+        <div>
+            <input required type="checkbox" name="checkbox-aceite" id="checkbox-aceite" required>
+            <label for="checkbox-aceite" class="checkbox-form">Concordo com os termos e política de privacidade</label><br>
+            <span id="span-termos">Leia nossos termos e política de privacidade.</span>
+        </div>
+
+        <div id="botao-salvar">
+        <input type="button" class="btn btn-success" id="btnInsert" value="Cadastrar">
+<!--        <input type="button" class="btn btn-warning" id="btnUpdate" value="Alterar">
+        <input type="button" class="btn btn-danger" id="btnDelete" value="Excluir">
+        <input type="button" class="btn btn-secondary" id="btnClear" value="Limpar Form">
+        <a href="lista-contatos.html"><input type="button" class="btn btn-warning" id="btnClear" value="Pesquisar Contatos"></a>
+    -->
+        </div>
+    </form>
+
+<!-- Mostra a tabela na página de cadastro de prestador, retirado da página -->
+       <!-- <div class="row">
+            <div class="col-sm-12">
+                <table id="grid-contatos" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Prestador(a)</th>
+                            <th scope="col">Telefone</th>
+                            <th scope="col">E-mail</th>
+                            <th scope="col">Cidade</th>
+                            <th scope="col">Ocupação</th>
+                            <th scope="col">Tipo de Serviço</th>
+                        </tr>
+                    </thead>
+                    <tbody id="table-contatos">
+                        <tr>
+                            <td scope="row">1</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>-->
+    </div>
+</div>
+<div class=""></div>
+</main>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script src="app.js"></script>
+    <script>
+        function exibeContatos() {
+            let contatos =  db.contatos
+
+            // Remove todas as linhas do corpo da tabela
+            $("#table-contatos").html("")
+
+            // Popula a tabela com os registros do banco de dados
+            for (i = 0; i < contatos.length; i++) {
+                let contato = contatos[i]
+                $("#table-contatos").append(`<tr><td scope="row">${contato.id}</td>
+                                                <td>${contato.nome}</td>
+                                                <td>${contato.email}</td>
+                                                <td>${contato.celular}</td>
+                                                <td>${contato.cidade}</td>
+                                                <td>${contato.ocupacao}</td>
+                                                <td>${contato.tipo}</td>
+                                            </tr>`)
+            }
+        }
+
+        function init() {
+            // Adiciona funções para tratar os eventos 
+            $("#btnInsert").click(function () {
+                // Verfica se o formulário está preenchido corretamente
+                if (!$('#form-contato-servicos')[0].checkValidity()) {
+                    alert ('Preencha o formulário corretamente.');
+                    //displayMessage("Preencha o formulário corretamente.");
+                    return;
+                }
+
+                // Cria contato a partir dos valores dos campos do formulário
+                let contato = {
+                    nome: $("#inputNome").val(),
+                    email: $("#inputEmail").val(),
+                    celular: $("#inputCelular").val(),
+                    cidade: $("#inputCidade").val(),
+                    ocupacao: $("#inputOcupacao").val(),
+                    tipo: $('#inputTipo').val()
+                };
+
+                insertContato(contato);
+
+                // Reexibe os contatos
+                exibeContatos();
+
+                // Limpa o formulario
+                $("#form-contato-servicos")[0].reset();
+            });
+
+            // Intercepta o click do botão Alterar
+            $("#btnUpdate").click(function () {
+                // Obtem os valores dos campos do formulário
+                if (!$("#inputId").val()) {
+                    displayMessage("Selecione um contato para ser alterado.");
+                    return;
+                }
+                let campoId = parseInt($("#inputId").val())
+
+                let contato = {
+                    id: campoId,
+                    nome: $("#inputNome").val(),
+                    email: $("#inputEmail").val(),
+                    celular: $("#inputCelular").val(),
+                    cidade: $("#inputCidade").val(),
+                    ocupacao: $("#inputOcupacao").val(),
+                    tipo: $('#inputTipo').val()
+                };
+
+                updateContato(parseInt(campoId), contato);
+
+                // Reexibe os contatos
+                exibeContatos();
+
+                // Limpa o formulario
+                $("#form-contato-servicos")[0].reset();
+            });
+
+            // Intercepta o click do botão Excluir
+            $("#btnDelete").click(function () {
+                let campoId = $("#inputId").val();
+                if (campoId == "") {
+                    displayMessage("Selecione um contato a ser excluído.");
+                    return;
+                }
+                deleteContato(parseInt(campoId));
+
+                // Reexibe os contatos
+                exibeContatos();
+
+                // Limpa o formulario
+                $("#form-contato-servicos")[0].reset();
+            });
+
+            // Intercepta o click do botão Listar Contatos
+            $("#btnClear").click(function () {
+                $("#form-contato-servicos")[0].reset();
+            });
+
+            // Oculta a mensagem de aviso após alguns segundos
+            $('#msg').bind("DOMSubtreeModified", function () {
+                window.setTimeout(() => {
+                    $(".alert").fadeTo(500, 0).slideUp(500)
+                }, 5000);
+            });
+
+            // Preenche o formulário quando o usuario clicar em uma linha da tabela 
+            $("#grid-contatos").on("click", 'tr', (evento) => {
+                let linhaContato = evento.currentTarget;
+                colunas = linhaContato.querySelectorAll("td");
+
+                $("#inputId").val(colunas[0].innerText);
+                $("#inputNome").val(colunas[1].innerText);
+                $("#inputCelular").val(colunas[2].innerText);
+                $("#inputEmail").val(colunas[3].innerText);
+                $("#inputCidade").val(colunas[4].innerText);
+                $("#inputOcupacao").val(colunas[5].innerText);
+                $("#inputTipo").val(colunas[6].innerText);
+            });
+
+            exibeContatos();
+        }
+    </script>
+
+<footer class="rodape">
+    <div class="icn_rodape">
+        <a href="https://www.instagram.com/" target="_blank">
+        <img id="icnrod1" width="35" height="35" src="/src/index/imgs/instagram_icn.png">
+        </a>
+        <a href="https://br.linkedin.com/" target="_blank">
+        <img id="icnrod2" width="35" height="35" src="/src/index/imgs/linkedin_icn.png">
+        </a>
+        <a href="https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2025-1-pe1-t5-g5-turma5/tree/main" target="_blank">
+        <img id="icnrod3" width="35" height="35" src="/src/index/imgs/github_icn.png">
+        </a>
+    </div>
+</footer>
+
+</body>
+
+</html>
